@@ -1,0 +1,68 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+input[type="text"], input[type="email"] {
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: white;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6f00;
+    color: black;
+    cursor: pointer;
+}
+body {
+    background-color: black;
+    color: white;
+    font-family: "Courier New", monospace;
+}
+
+.punk-title {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 50px;
+}
+
+.punk-content {
+    margin: 30px;
+}
+
+.punk-content p {
+    margin-bottom: 10px;
+}
+
+.punk-content ul {
+    list-style-type: square;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.punk-content li {
+    margin-bottom: 5px;
+}
+
+.punk-content a {
+    color: lime;
+    text-decoration: none;
+}
+
+.punk-content a:hover {
+    color: cyan;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Punk Style Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div>
+        <h1>View Stock Performance In The Past 120 Days</h1>
+        <div class="punk-content">
+            <p>This is my stockview project. It's rebellious, edgy, and full of attitude.</p>
+            <p>Here are some key features of my project:</p>
+            <ul>
+                <li>Unique and unconventional design</li>
+                <li>Raw and energetic functionality</li>
+                <li>Intense user experience</li>
+            </ul>
+            <p>Get ready to be blown away!</p>
+        </div>
+        <form action="/stockview" method="POST">
+            <input type="text" name="stock_name" placeholder="Enter stock name" required>
+            <button type="submit">Generate Plots</button>
+        </form>
+
+        {% if show_result %}
+        <h2>Stock Name: {{ stock_name }}</h2>
+        <img src="{{ url_for('static', filename='stock_plot.png') }}" alt="Stock Plot" width="2000" height="600">
+<!--        <img src="{{ url_for('static', filename='volume_plot.png') }}" alt="Volume Plot">-->
+        {% endif %}
+    </div>
+</body>
+</html>
