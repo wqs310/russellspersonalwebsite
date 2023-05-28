@@ -1,0 +1,7 @@
+firebase_admin==6.1.0
+Flask==2.3.2
+matplotlib==3.7.1
+numpy==1.24.3
+pandas==2.0.1
+yfinance==0.2.18
+gunicorn
