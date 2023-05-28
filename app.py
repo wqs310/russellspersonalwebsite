@@ -3,11 +3,11 @@ from stock_view import StockView
 import multiprocessing
 import os
 
-import firebase_admin
-from firebase_admin import credentials
+# import firebase_admin
+# from firebase_admin import credentials
 
-cred = credentials.Certificate("path/to/serviceAccountKey.json")
-firebase_admin.initialize_app(cred)
+# cred = credentials.Certificate("path/to/serviceAccountKey.json")
+# firebase_admin.initialize_app(cred)
 
 
 app = Flask(__name__)
@@ -22,6 +22,8 @@ def index():
 def generate_plots(stock_name):
     stock_view = StockView(stock_name)
     stock_view.create_graph()
+    # Save the plot image to the temporary file system
+    stock_view.save_plot_to_tmp()
 
 
 @app.route('/stockview', methods=['GET', 'POST'])

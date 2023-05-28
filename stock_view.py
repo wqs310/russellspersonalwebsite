@@ -149,3 +149,12 @@ class StockView():
     #plt.close(f2)
     #fig_stock.savefig(f'{stock}_chart.png')
     #return fig_stock
+
+
+  
+  def save_plot_to_tmp(self):
+      # Save the plot image to the temporary file system
+      plot_file = os.path.join('/tmp', 'stock_plot.png')
+      plt.savefig(plot_file)
+
+      os.remove(plot_file)
