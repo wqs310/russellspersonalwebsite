@@ -66,3 +66,26 @@ body {
 .punk-content a:hover {
     color: cyan;
 }
+
+.styled-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.styled-button:hover {
+  background-color: #45a049;
+}
+
+div {
+  padding: 20px;
+  margin:30px;
+}

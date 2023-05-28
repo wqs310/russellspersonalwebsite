@@ -3,6 +3,13 @@ from stock_view import StockView
 import multiprocessing
 import os
 
+import firebase_admin
+from firebase_admin import credentials
+
+cred = credentials.Certificate("path/to/serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
+
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "Emilywillisx3"
 

@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Punk Style Form</title>
+    <title>StockView</title>
+
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAA8vLyADQ0NAD7+/sAGxsbACQkJAACAgIANjY2APT09AD9/f0AlJOSAB0dHQAEBAQADQ0NAP///wBBQUEAKCgoADExMQA6OjoA+Pj4AENDQwAYGBgATExMACoqKgBFRUUAGhoaACMjIwAsLCwAAQEBADU1NQD8/PwAExMTAEdHRwBQUFAALi4uAOzs7AADAwMA9fX1AP7+/gAnJycAOTk5ABcXFwAgICAAKSkpAPn5+QDg4OAAIiIiACsrKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg4ODh4AFBwcEgAODg4ODg4ODgAcAAAAAAAAAAAODg4ODgAAAAAJDg4JAAAAAA4ODgAAHCYODg4ODg4OHAAADg4pHAkmAAAODgAADiYAJA4AGgQODgAADg4MAA4OCgAAKxslDg4AACYmAAAODgEAJBIHDg4OAAAAAAAJDg4JAAAYDw4ODhoAJhMcBg4ODgAALhYjDg4vGg4ODQAODi0AKgAAIQ4OHSIoGRwAJg4AAAAOAAAOJhcCERAfHg4IAAYODgAAAA4ODg4ODg4sFRUADg4OAAAAIAMODgMnBQsADg4ODg4AAAAAAAAAABoADg4ODg4ODg4AAAAAAAAODg4ODgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div>
-        <h1>View Stock Performance In The Past 120 Days</h1>
+        <h1>View Stock Performance In The Past 120 Days with Moving Averages</h1>
         <div class="punk-content">
-            <p>This is my stockview project. It's rebellious, edgy, and full of attitude.</p>
-            <p>Here are some key features of my project:</p>
+            <p>This is my stockview project.</p>
+            <p>Here are some introduction of the moving average lines:</p>
             <ul>
-                <li>Unique and unconventional design</li>
-                <li>Raw and energetic functionality</li>
-                <li>Intense user experience</li>
+                <li>Moving average lines smooth out price fluctuations and identify trends in financial markets.</li>
+                <li>They calculate averages of past prices to provide a clearer picture of market direction.</li>
+                <li>Moving averages act as support and resistance levels, helping traders make informed decisions.</li>
+                <li>Different types of moving averages, such as simple and exponential, are used.</li>
+                <li>Combining different moving averages confirms trends and aids in finding entry and exit points.</li>
+                <li>Moving averages are a simple yet effective tool for understanding market trends in technical analysis.</li>
+
             </ul>
-            <p>Get ready to be blown away!</p>
+<!--            <p>Moving average lines are tools used in financial markets to smooth out price fluctuations-->
+<!--                and identify trends. They calculate averages of past prices and help traders make informed-->
+<!--                decisions. By filtering out short-term noise, these lines highlight long-term trends and act-->
+<!--                as support and resistance levels. Different types of moving averages, like simple and exponential,-->
+<!--                are used. Traders often combine different moving averages to confirm trends and find entry and exit-->
+<!--                points. Overall, moving averages provide a simple yet effective way to understand market trends in-->
+<!--                technical analysis.</p>-->
         </div>
         <form action="/stockview" method="POST">
             <input type="text" name="stock_name" placeholder="Enter stock name" required>
-            <button type="submit">Generate Plots</button>
+            <button class="styled-button" type="submit">Generate Plots</button>
         </form>
 
         {% if show_result %}

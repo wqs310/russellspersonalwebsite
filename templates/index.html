@@ -247,12 +247,25 @@
           <div class="column">
             <div class="box" >
               <div class="content"  >
-                <a href = "https://public.tableau.com/app/profile/russell.sun7583/viz/2021-BikeManufacturer/Story1" class="title is-5">Analyzing Bike Manufacturer Operations</a>
-                <br><br>Built Tableau dashboards including bar charts, line charts, tree maps, doughnuts, and geographic visualizations, delivering four-year business overview of three product lines, 
-                product categories, and customer types across five countries. Analyzed trends in price and cost growth; 
-                calculated profit margins by item with discounts, generating potential marketing strategies for discount types 
-                and risk management recommendations for supply chain operations.
+                <a href = "https://public.tableau.com/app/profile/russell.sun7583/viz/2021-BikeManufacturer/Story1" class="title is-5">Stockview Website by Flask</a>
+                <br><br>The Flask-based stock view project offers a rebellious interface for exploring a stock's performance in the past 120 days.
+                It generates insightful Matplotlib plots, with users inputting stock names via a simple form. The separate process generates the plots,
+                ensuring a smooth experience. The project page displays the stock name and plot, complemented by edgy custom CSS.
+                It's an engaging and user-friendly tool for visually analyzing stock performance.
               <br><br>
+              <br><br><img src="{{ url_for('static', filename='assets/stock.jpeg') }}" alt="Placeholder image" width="500" height="100">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box" >
+              <div class="content"  >
+                <a href = "https://public.tableau.com/app/profile/russell.sun7583/viz/2021-BikeManufacturer/Story1" class="title is-5">Analyzing Bike Manufacturer Operations</a>
+                <br><br>Built Tableau dashboards including bar charts, line charts, tree maps, doughnuts, and geographic visualizations, delivering four-year business overview of three product lines,
+                product categories, and customer types across five countries. Analyzed trends in price and cost growth;
+                calculated profit margins by item with discounts, generating potential marketing strategies for discount types
+                and risk management recommendations for supply chain operations.
+
               <br><br><img src="{{ url_for('static', filename='assets/bike.jpeg') }}" alt="Placeholder image" width="500" height="100">
               </div>
             </div>
@@ -270,7 +283,10 @@
               </div>
             </div>
           </div>
+
+
         </div>
+
 
        
       </div>
