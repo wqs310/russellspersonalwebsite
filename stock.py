@@ -26,9 +26,9 @@ class StockView():
         sma_data = pd.DataFrame()
 
         for window in moving_averages:
-            sma_data[f'ma_{window}'] = stock_chart['Adj Close'].rolling(window=window).mean()
+            sma_data[f'ma_{window}'] = stock_chart['Close'].rolling(window=window).mean()
 
-        ma_chart = stock_chart.copy()[['Adj Close']].join(sma_data)
+        ma_chart = stock_chart.copy()[['Close']].join(sma_data)
 
         ma_chart["bull"] = np.where(
             ma_chart.iloc[:, 1:] > ma_chart.iloc[:, 2:].shift(1), 1, 0).all(axis=1)
@@ -48,7 +48,7 @@ class StockView():
         self.plot_marked_periods(bull_marked, '#ffffd4')
         self.plot_marked_periods(bear_marked, '#6b8ba4')
 
-        text_height = max(stock_chart['Adj Close']) * 0.618 + 40
+        text_height = max(stock_chart['Close']) * 0.618 + 40
 
         self.plot_ma_line(stock_chart, 'black', 5, 'stock price')
         for window in moving_averages:
