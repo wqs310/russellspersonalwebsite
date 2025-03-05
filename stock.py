@@ -20,7 +20,7 @@ class StockView():
         start_str = start.strftime('%Y-%m-%d')
         end_str = end.strftime('%Y-%m-%d')
 
-        stock_chart = pd.DataFrame(yf.download(self.stock_name, start=start_str, end=end_str))
+        stock_chart = pd.DataFrame(yf.download(self.stock_name, start=start_str, end=end_str, multi_level_index= False)).rename(columns={'Close': 'Adj Close'})  
 
         moving_averages = [5, 20, 30, 60, 120]
         sma_data = pd.DataFrame()
