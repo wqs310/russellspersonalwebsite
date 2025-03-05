@@ -22,7 +22,8 @@ class StockView():
     end.strftime('%Y-%m-%d')
 
     stock_chart = pd.DataFrame(yf.download(self.stock_name, start=start,
-      end=end))                  # CALL THE FUNCTION
+      end=end, multi_level_index= False)).rename(columns={'Close': 'Adj Close'})                    # CALL THE FUNCTION
+    
 
     sma_5 = pd.DataFrame()
     sma_5['Adj_Close_Price'] = stock_chart['Adj Close'].rolling(window = 5).mean()
