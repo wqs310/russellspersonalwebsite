@@ -25,18 +25,18 @@ class StockView():
       end=end))                  # CALL THE FUNCTION
 
     sma_5 = pd.DataFrame()
-    sma_5['Adj_Close_Price'] = stock_chart['Close'].rolling(window = 5).mean()
+    sma_5['Adj_Close_Price'] = stock_chart['Adj Close'].rolling(window = 5).mean()
     sma_20 = pd.DataFrame()
-    sma_20['Adj_Close_Price'] = stock_chart['Close'].rolling(window = 20).mean()
+    sma_20['Adj_Close_Price'] = stock_chart['Adj Close'].rolling(window = 20).mean()
     sma_30 = pd.DataFrame()
-    sma_30['Adj_Close_Price'] = stock_chart['Close'].rolling(window = 30).mean()
+    sma_30['Adj_Close_Price'] = stock_chart['Adj Close'].rolling(window = 30).mean()
     sma_60 = pd.DataFrame()
-    sma_60['Adj_Close_Price'] = stock_chart['Close'].rolling(window = 60).mean()
+    sma_60['Adj_Close_Price'] = stock_chart['Adj Close'].rolling(window = 60).mean()
     sma_120 = pd.DataFrame()
-    sma_120['Adj_Close_Price'] = stock_chart['Close'].rolling(window = 120).mean()
+    sma_120['Adj_Close_Price'] = stock_chart['Adj Close'].rolling(window = 120).mean()
 
 
-    ma_chart = stock_chart.copy()[['Close']]
+    ma_chart = stock_chart.copy()[['Adj Close']]
     ma_chart['ma_5'] = sma_5['Adj_Close_Price']
     ma_chart['ma_20'] = sma_20['Adj_Close_Price']
     ma_chart['ma_30'] = sma_30['Adj_Close_Price']
@@ -107,9 +107,9 @@ class StockView():
     past_days_120 = stock_chart.index[len(stock_chart)-120]
 
 
-    text_height = max(stock_chart['Close'])*0.618 + 40
+    text_height = max(stock_chart['Adj Close'])*0.618 + 40
 
-    plt.plot(stock_chart['Close'],color='black', linewidth=5, label = "stock price")
+    plt.plot(stock_chart['Adj Close'],color='black', linewidth=5, label = "stock price")
 
     plt.plot(sma_5, color='red', linewidth=1, label = "5 days MA")
     plt.plot(sma_20, color='orange', linewidth=1, label = "20 days MA")
