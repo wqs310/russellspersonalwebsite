@@ -125,22 +125,7 @@ class StockView():
     fig_stock = plt.gcf()
     plt.grid()
     plt.show()
-    f2 = plt.figure()
-    f2.set_figwidth(40)
-    f2.set_figheight(5)
-    ax2 = plt.gca()
-    if len(bull_start_dates) > 0 :
-      for i in range(len(bull_start_dates)):
-        plt.axvspan(bull_start_dates[i], bull_end_dates[i], facecolor='#ffffd4')
-    if len(bear_start_dates) > 0 :
-      for i in range(len(bear_start_dates)):
-        plt.axvspan(bear_start_dates[i], bear_end_dates[i], facecolor='#6b8ba4')
 
-    plt.bar(stock_chart.index,stock_chart['Volume'], color = "orange")
-    plt.grid()
-    plt.ylabel('Volume in 100 million')
-
-    plt.show()
     # Save the first plot as an image
     fig_stock.savefig('static/stock_plot.png')
     print(1)
